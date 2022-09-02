@@ -7,12 +7,5 @@ var deckSize int
 
 func main() {
 	cards := newDeck()
-	// cards.print()
-
-	hand, remaingCards := cards.deal(5)
-
-	fmt.Println(hand)
-	fmt.Println(remaingCards)
-	fmt.Println(cards)
-
+	fmt.Println(toString(cards))
 }
