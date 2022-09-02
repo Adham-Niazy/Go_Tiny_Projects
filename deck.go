@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"io/ioutil"
 	"strings"
 )
 
@@ -33,5 +34,10 @@ func (d deck) print() {
 }
 
 func toString(list []string) string {
-	return strings.Join(list, ",")
+	return strings.Join(list, "\n")
+}
+
+func (d deck) saveToFile(path string) error {
+	// 0666 => is a basic permission means anyone can read and write from the file system
+	return ioutil.WriteFile(path, []byte(toString(d)), 0666)
 }
