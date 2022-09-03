@@ -5,9 +5,9 @@ var deckSize int
 
 func main() {
 	cards := newDeck()
-	cards.saveToFile("Deck.txt")
+	cards.saveToFile("dummys/Deck.txt")
 
-	importedHand := importDeckFromFile("favorite_cards.txt")
+	importedHand := importDeckFromFile("dummys/favorite_cards.txt")
 
 	importedHand.shuffle()
 	// Printing after shuffling
