@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"io/ioutil"
+	"os"
 	"strings"
 )
 
@@ -24,7 +25,7 @@ func newDeck() deck {
 }
 
 func (d deck) deal(handSize int) (deck, deck) {
-	return d[handSize:], d[:handSize]
+	return d[:handSize], d[handSize:]
 }
 
 func (d deck) print() {
@@ -40,4 +41,13 @@ func toString(list []string) string {
 func (d deck) saveToFile(path string) error {
 	// 0666 => is a basic permission means anyone can read and write from the file system
 	return ioutil.WriteFile(path, []byte(toString(d)), 0666)
+}
+
+func importDeckFromFile(path string) deck {
+	bs, err := ioutil.ReadFile(path)
+	if err != nil {
+		fmt.Println("Error:", err)
+		os.Exit(1)
+	}
+	return strings.Split(string(bs), "\n")
 }

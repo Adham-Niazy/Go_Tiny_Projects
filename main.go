@@ -6,4 +6,7 @@ var deckSize int
 func main() {
 	cards := newDeck()
 	cards.saveToFile("Deck.txt")
+
+	importedHand := importDeckFromFile("favorite_cards.txt")
+	importedHand.print()
 }
