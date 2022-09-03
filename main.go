@@ -8,5 +8,8 @@ func main() {
 	cards.saveToFile("Deck.txt")
 
 	importedHand := importDeckFromFile("favorite_cards.txt")
+
+	importedHand.shuffle()
+	// Printing after shuffling
 	importedHand.print()
 }
