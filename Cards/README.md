@@ -8,3 +8,5 @@
 4. (deal) => Create a 'hand' of cards 
 5. (Save to File) => Save a list of cards to a file on the local machine
 6. (New Deck from File) => Load a list of cards from the local machine 
+
+### Test it out by running this command `go run main.go deck.go`
