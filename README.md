@@ -4,3 +4,6 @@
 
 1. Playing Cards Simulation
 2. Structs & Maps
+3. Interfaces
+
+### All those tiny projects are within this course: [Go: The Complete Developer's Guide (Golang)](https://www.udemy.com/course/go-the-complete-developers-guide/) from Stephen Grider
