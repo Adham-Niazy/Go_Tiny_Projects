@@ -1,0 +1,36 @@
+package main
+
+import "fmt"
+
+type englishBot struct{}
+
+type spanishBot struct{}
+
+func main() {
+	eb1 := englishBot{}
+	// sb1 := spanishBot{}
+
+	printGreeting(eb1)
+	// printGreeting(sb1)
+}
+
+// GetGreetings Have different Implementation in both bots
+func (englishBot) getGreeting() string {
+	// Imagine very custom logic specially for english bot
+	return "Hello there"
+}
+func (spanishBot) getGreeting() string {
+	// Imagine very custom logic specially for spanish bot
+	return "Hola!"
+}
+
+// PrintGreeting Have Same Implementation in both bots
+// This code will get us an error becasue we are declaring printGreeting 2 Times
+// and Go doesn't support overloading
+// So we will comment the second function which means we can't go with this approach
+func printGreeting(eb englishBot) {
+	fmt.Println(eb.getGreeting())
+}
+// func printGreeting(sb spanishBot) {
+// 	fmt.Println(sb.getGreeting())
+// }
